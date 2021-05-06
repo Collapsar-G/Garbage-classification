@@ -89,7 +89,7 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=cfg.num_epo
     return model, val_acc_history
 
 
-def save_model(model, save_dir):
+def save_model(model):
     torch.save(model, cfg.save_dir_obs)
     print('save model_state success')
 
@@ -154,3 +154,4 @@ if __name__ == "__main__":
         criterion,
         optimizer
     )
+    save_model(model)

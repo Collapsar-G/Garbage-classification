@@ -24,13 +24,15 @@ cfg = __c
 
 __c.gpu_num = 0
 
-__c.num_classes = 14
+# __c.num_classes = 14
+
+__c.num_classes = 52
 
 __c.batch_size = 128
 
 __c.num_workers = 1
 
-__c.num_epochs = 3
+__c.num_epochs = 5
 
 __c.learning_rate = 5e-3
 
@@ -45,3 +47,5 @@ __c.model_local = "./models/resnet50-19c8e357.pth"
 __c.save_dir_obs = './output/model/model.pth'
 
 __c.data_path = './data/'
+
+__c.test_model_path = "'./models/trained_model3.pth'"
