@@ -32,5 +32,5 @@ def test_result(path):
 
 
 if __name__ == '__main__':
-    path = './data/6.jpg'
+    path = './data/img_6.jpg'
     result = test_result(path)
