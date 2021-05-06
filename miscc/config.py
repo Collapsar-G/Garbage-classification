@@ -24,7 +24,7 @@ cfg = __c
 
 __c.gpu_num = 0
 
-__c.num_classes = 13
+__c.num_classes = 14
 
 __c.batch_size = 128
 

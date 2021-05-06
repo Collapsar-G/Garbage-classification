@@ -136,6 +136,8 @@ if __name__ == "__main__":
     print("GPU count: %d" % torch.cuda.device_count())
 
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+    if torch.cuda.is_available():
+        torch.cuda.set_device(0)
     model.to(device)
 
     params_to_update = []

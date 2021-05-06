@@ -45,19 +45,23 @@ if __name__ == "__main__":
     source_data_path = "../pic_with_all"
     destination_data_path = "../data/garbage_classify"
     num = 20000
+    with open("../data/new_shu_label.txt", "w", encoding="utf-8") as file:
+        file.write("")
     for f in os.listdir(source_data_path):
         file_list = traverseFile(source_data_path + "/" + f)
         # print(file_list)
         print("=" * 55)
         for photo in file_list:
+            if photo.split(".")[1]!="jpg":
+                continue
             try:
                 copyfile(source_data_path + "/" + f + "/" + photo,
                          destination_data_path + "/img_" + str(num).zfill(5) + ".jpg")
-                with open(destination_data_path + "/img_" + str(num).zfill(5) + ".txt", "a",
+                with open(destination_data_path + "/img_" + str(num).zfill(5) + ".txt", "w",
                           encoding="utf-8") as file:
                     file.write("/img_" + str(num).zfill(5) + ", " + class2id[f])
                 with open("../data/new_shu_label.txt", "a", encoding="utf-8") as file:
-                    file.write("/data/garbage_classify/img_" + str(num).zfill(5) + ".jpg," + class2id[f] + "\n")
+                    file.write("./data/garbage_classify/img_" + str(num).zfill(5) + ".jpg," + class2id[f] + "\n")
                 num += 1
 
             except:

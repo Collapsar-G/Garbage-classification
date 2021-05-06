@@ -30,6 +30,9 @@ class GarbageDataSet(Dataset):
 
     def __getitem__(self, index):
         path, label = self.imgs[index]
+
+        path = path.replace('/', '\\')
+        # print(path, "##########")
         img = Image.open(path).convert('RGB')
         if self.transform is not None:
             img = self.transform(img)
