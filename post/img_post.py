@@ -16,7 +16,9 @@ if __name__ == '__main__':
     # path = './data/garbage_classify/train_data/img_2.jpg'
     path = './data/QQ图片20210306111130.jpg'
     img_str = getByte(path)
-    url = 'http://localhost:3270/test/'
+    # url = 'http://localhost:3270/test/'
+    # url = 'https://collapsar.cn1.utools.club/test/'
+    url = 'https://dachuang.collapsar.online/test/'
 
     data = {'recognize_img': img_str}
     json_mod = simplejson.dumps(data)
